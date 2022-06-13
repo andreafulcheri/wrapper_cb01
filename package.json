@@ -1,0 +1,19 @@
+{
+  "name": "wrapper_cb01",
+  "version": "1.0.0",
+  "description": "A simple program to avoid annoying ads",
+  "main": "main.js",
+  "scripts": {
+    "Run": "node main.js",
+    "Get Link": "node rss.js"
+  },
+  "author": "Andrea Fulcheri",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.11",
+    "inquirer": "^8.2.4",
+    "prompt-sync": "^4.2.0",
+    "rss-parser": "^3.12.0"
+  }
+}
