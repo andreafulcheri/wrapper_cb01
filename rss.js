@@ -1,8 +1,7 @@
-let Parser = require('rss-parser');
-let parser = new Parser();
+var Parser = require('rss-parser');
+var parser = new Parser();
 
 (async () => {
-
-  let feed = await parser.parseURL('https://feeds.feedburner.com/cineblog01/Film-In-Streaming-Gratis');
-  console.log(feed);
+  var feed = await parser.parseURL('https://feeds.feedburner.com/cineblog01/Film-In-Streaming-Gratis');
+  console.log("Il link aggiornato è: " + feed.link);
 })();
