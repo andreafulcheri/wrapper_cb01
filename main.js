@@ -22,7 +22,7 @@ const parser = new Parser();
     do {
         var ricerca = prompt("Inserisci il film o la serie tv da cercare -> ");
 
-        var $ = cheerio.load((await axios.get(siteLink + "/page/" + index + "/?s=" + ricerca)).data);
+        var $ = cheerio.load((await axios.get(`${siteLink}/page/${index}/?s=${ricerca}`)).data);
 
         $('div[class=sequex-page-title]').find('div > h1 > span').each(function (index, element) {
             risultati = Number(element.children[0].data.trim());
@@ -30,7 +30,7 @@ const parser = new Parser();
             console.log("\nRisultati: ", risultati, ' pagine: ', pagine);
         });
 
-        var $2 = cheerio.load((await axios.get(siteLink + "/serietv/page/" + indexSerieTV + "/?s=" + ricerca)).data);
+        var $2 = cheerio.load((await axios.get(`${siteLink}/serietv/page/${indexSerieTV}/?s=${ricerca}`)).data);
 
         $2('div[class=sequex-page-title]').find('div > h1 > span').each(function (index, element) {
             risultatiSerieTV = Number(element.children[0].data.trim());
@@ -38,11 +38,11 @@ const parser = new Parser();
             console.log("Risultati Serie TV: ", risultatiSerieTV, ' pagine: ', pagineSerieTV + '\n');
         });
 
-        if ((risultati + risultatiSerieTV) == 0) {
+        if ((risultati + risultatiSerieTV) === 0) {
             console.log("Nessun risultato\n");
         }
 
-    } while ((risultati + risultatiSerieTV) == 0)
+    } while ((risultati + risultatiSerieTV) === 0)
 
     while (index <= pagine) {
         $('div[class=sequex-one-columns]').find('div > div > div > a').each(function (index, element) {
@@ -85,7 +85,7 @@ const parser = new Parser();
         let nome = $2(element).contents().first().text().slice(0, -3);
         let links = [];
         for (var child of element.children) {
-            if (child.name == 'a') {
+            if (child.name === 'a') {
                 let name = child.firstChild.data;
                 links.push({ name, link: $2(child).attr('href') });
             }
@@ -94,9 +94,9 @@ const parser = new Parser();
     });
 
     for (let result of list2) {
-        console.log(result.nome + ":");
+        console.log(`${result.nome}:`);
         for (let link of result.links) {
-            console.log("\t" + link.name + " -> " + link.link);
+            console.log(`\t${link.name} -> ${link.link}`);
         }
     }
 
