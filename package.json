@@ -13,7 +13,10 @@
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.11",
     "inquirer": "^8.2.4",
+    "nodejs-file-downloader": "^4.12.1",
+    "progress": "^2.0.3",
     "prompt-sync": "^4.2.0",
+    "puppeteer": "^21.3.8",
     "rss-parser": "^3.12.0"
   }
 }
