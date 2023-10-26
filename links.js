@@ -72,20 +72,20 @@ async function getLinks(siteLink) {
 
     //film
     $('table[class=cbtable]').find('tbody > tr > td > a').each(function (index, element) {
-        list2.push({ links: [{ link: $(element).attr('href'), name: "" }], nome: $(element).contents().first().text() });
+        list2.push({ value: $(element).attr('href') , name: $(element).contents().first().text() });
     });
 
     //serietv
     $2('table[class=cbtable]').find('tbody > tr > td > div > div > strong > p').each(function (index, element) {
-        let nome = $2(element).contents().first().text().slice(0, -3);
+        let name = $2(element).contents().first().text().slice(0, -3);
         let links = [];
         for (var child of element.children) {
             if (child.name === 'a') {
                 let name = child.firstChild.data;
-                links.push({ name, link: $2(child).attr('href') });
+                links.push({ name, value: $2(child).attr('href') });
             }
         }
-        list2.push({ links, nome });
+        list2.push({ value:links, name });
     });
 
     return list2;

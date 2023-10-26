@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.11",
+    "cli-spinner": "^0.2.10",
     "inquirer": "^8.2.4",
     "nodejs-file-downloader": "^4.12.1",
     "progress": "^2.0.3",
