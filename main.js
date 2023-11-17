@@ -1,10 +1,10 @@
 
 
-const { getFeed } = require('./rss.js');
-const { getLinks } = require('./links.js');
+const { getFeed } = require('./lib/cb01/rss.js');
+const { getLinks } = require('./lib/cb01/links.js');
 const inquirer  = require('inquirer');
 const { Separator } = require('inquirer');
-const { getStreamingLink } = require("./bypassLinkProtector.js");
+const { getStreamingLink } = require("./lib/cb01/bypassLinkProtector.js");
 
 (async () => {
 

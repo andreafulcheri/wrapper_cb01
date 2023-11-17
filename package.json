@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "Run": "node main.js",
-    "Get Link": "node rss.js"
+    "Get CB01 Link": "node getCb01LatestLink.js"
   },
   "author": "Andrea Fulcheri",
   "license": "MIT",
