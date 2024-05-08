@@ -127,3 +127,4 @@ dist
 .pnp.*
 package-lock.json
 downloads/*
+.DS_Store
