@@ -1,0 +1,17 @@
+get https://streamingcommunity.li/api/search?q={nome film}
+res:
+obj.data[].name
+obj.data[].id
+obj.data[].type -> movie, serie
+
+token playlist
+
+get playlist
+
+get key https://vixcloud.co/storage/enc.key header: Referrer https://vixcloud.co/embed/198724?token=3c9da08401af160a16522c53b6ae7fed&title=Tutti+tranne+te&referer=1&expires=1712745837
+
+download playlist
+
+decrypt playlist
+
+join files
